@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Madan Kumar Elumalai | Resume</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --primary: #e30613;
+      --accent: #f5f5f5;
+      --text: #222;
+      --muted: #666;
+      --border: #ddd;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: var(--text);
+      background: #fafafa;
+      line-height: 1.6;
+    }
+
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .page {
+      max-width: 960px;
+      margin: 24px auto;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    header {
+      padding: 24px 32px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 16px;
+      background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 40%, #f3f3f3 100%);
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      letter-spacing: 0.03em;
+    }
+
+    header h2 {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .contact {
+      text-align: right;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .contact div { margin-bottom: 2px; }
+
+    main {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.1fr);
+      gap: 24px;
+      padding: 24px 32px 32px;
+    }
+
+    section { margin-bottom: 20px; }
+
+    h3 {
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--primary);
+    }
+
+    .tagline {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-top: 6px;
+      max-width: 520px;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 2px;
+    }
+
+    .item-role {
+      font-weight: 600;
+    }
+
+    .item-company {
+      font-size: 0.94rem;
+      color: var(--muted);
+    }
+
+    .item-meta {
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    ul {
+      list-style: disc;
+      padding-left: 18px;
+      margin-top: 4px;
+      font-size: 0.92rem;
+    }
+
+    li + li { margin-top: 3px; }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .pill {
+      font-size: 0.82rem;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      border: 1px solid var(--border);
+      white-space: nowrap;
+    }
+
+    .subheading {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-top: 8px;
+      margin-bottom: 2px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      font-size: 0.78rem;
+      margin-left: 6px;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .contact {
+        text-align: left;
+      }
+      main {
+        grid-template-columns: 1fr;
+      }
+      .page {
+        margin: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div>
+        <h1>Madan Kumar Elumalai</h1>
+        <h2>Senior Software Engineer • Java, Cloud & GenAI</h2>
+        <p class="tagline">
+          Building enterprise-grade applications and AI-powered solutions across hospitality and B2B platforms, with a focus on fiscal compliance, scalability, and developer productivity.
+        </p>
+      </div>
+      <div class="contact">
+        <div><a href="tel:+919042532578">+91 90425 32578</a></div>
+        <div><a href="mailto:madan.mahaemmr@gmail.com">madan.mahaemmr@gmail.com</a></div>
+        <div><a href="https://github.com/MadanKumar" target="_blank">github.com/MadanKumar</a></div>
+        <div><a href="https://www.linkedin.com/in/Madan021" target="_blank">linkedin.com/in/Madan021</a></div>
+        <div>Chennai, Tamil Nadu, India</div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Left column -->
+      <div>
+        <section>
+          <h3>Experience</h3>
+
+          <div class="item">
+            <div class="item-header">
+              <div>
+                <span class="item-role">Senior Software Engineer</span>
+                <span class="item-company">| Oracle Corporation, Hospitality FLCC</span>
+              </div>
+              <div class="item-meta">2022 – Present · Chennai</div>
+            </div>
+            <ul>
+              <li>Implement fiscal, legal, and compliance requirements for multiple countries within Oracle Hospitality products, ensuring adherence to international standards.</li>
+              <li>Configure and maintain CI/CD pipelines using Jenkins and SonarQube to enforce code quality and automate build, test, and deployment workflows.</li>
+              <li>Develop high-quality, scalable Java/Spring features and automate regression tests using Selenium to improve release stability.</li>
+              <li>Built a GenAI chatbot POC with RAG and MCP tools leveraging OCI ADK to enhance developer and customer productivity.</li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <div class="item-header">
+              <div>
+                <span class="item-role">Member of Technical Staff</span>
+                <span class="item-company">| Zoho Corp</span>
+              </div>
+              <div class="item-meta">2019 – 2022 · Chennai</div>
+            </div>
+            <ul>
+              <li>Designed and implemented RFM segmentation and CRM automation capabilities to improve customer targeting and campaign performance.</li>
+              <li>Delivered enhancements for Zoho Finance integration, improving data interoperability and accounting workflows.</li>
+              <li>Single‑handedly designed and built the CRM orchestration feature to streamline user workflows across the customer lifecycle.</li>
+              <li>Contributed to B2B platform capabilities helping enterprises manage accounts, post‑sale engagements, and sales–marketing alignment.</li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <div class="item-header">
+              <div>
+                <span class="item-role">Software Engineer</span>
+                <span class="item-company">| Infoview Technologies</span>
+              </div>
+              <div class="item-meta">2016 – 2019 · Chennai</div>
+            </div>
+            <ul>
+              <li>Developed tools for database migration from RDBMS to NoSQL Cassandra, improving scalability and resilience.</li>
+              <li>Built a SQL analysis tool to generate test data for unit testing, accelerating developer productivity.</li>
+              <li>Automated dynamic SQL analysis and implementation, reducing development time by ~20% and minimizing human error.</li>
+              <li>Created a log access and caching utility to optimize performance across heterogeneous file systems.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h3>Education</h3>
+          <div class="item-header">
+            <div class="item-role">B.E. Computer Science and Engineering</div>
+            <div class="item-meta">2012 – 2016</div>
+          </div>
+          <div class="item-company">Anand Institute of Higher Technology, Chennai</div>
+        </section>
+      </div>
+
+      <!-- Right column -->
+      <div>
+        <section>
+          <h3>Skills</h3>
+
+          <div class="subheading">Languages & Frameworks</div>
+          <div class="pill-list">
+            <span class="pill">Java (8+)</span>
+            <span class="pill">Spring</span>
+            <span class="pill">Oracle ADF</span>
+            <span class="pill">JavaScript</span>
+          </div>
+
+          <div class="subheading">Cloud, DevOps & Data</div>
+          <div class="pill-list">
+            <span class="pill">OCI</span>
+            <span class="pill">Kafka</span>
+            <span class="pill">Kubernetes</span>
+            <span class="pill">Git</span>
+            <span class="pill">Jenkins</span>
+            <span class="pill">SonarQube</span>
+            <span class="pill">MySQL</span>
+            <span class="pill">PostgreSQL</span>
+            <span class="pill">Oracle PL/SQL</span>
+          </div>
+
+          <div class="subheading">Quality & Automation</div>
+          <div class="pill-list">
+            <span class="pill">Selenium</span>
+            <span class="pill">Unit & Integration Testing</span>
+            <span class="pill">CI/CD</span>
+          </div>
+
+          <div class="subheading">GenAI & Agents</div>
+          <div class="pill-list">
+            <span class="pill">OCI ADK</span>
+            <span class="pill">RAG</span>
+            <span class="pill">MCP Tools</span>
+            <span class="pill">Chatbot Development</span>
+          </div>
+        </section>
+
+        <section>
+          <h3>Awards</h3>
+          <ul>
+            <li>
+              <strong>Oracle Productivity Award</strong>
+              – Winner at HAIFive’25 Hospitality AI Innovation Fest for high‑impact AI innovation in productivity and value creation.
+            </li>
+            <li>
+              <strong>AI Trailblazer</strong>
+              – Recognized for proactively identifying AI opportunities, delivering impactful AI solutions, and solving real business problems to unlock value.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Certifications</h3>
+          <ul>
+            <li>Oracle Certified Professional (OCJP), Java SE 6</li>
+            <li>Oracle Cloud Infrastructure 2025 Certified Generative AI Professional</li>
+            <li>Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate</li>
+          </ul>
+        </section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
