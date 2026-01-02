@@ -11,14 +11,29 @@
       --text: #222;
       --muted: #666;
       --border: #ddd;
+      --bg: #fafafa;
+      --card-bg: #fff;
+      --shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    [data-theme="dark"] {
+      --primary: #ff4d4d;
+      --accent: #2a2a2a;
+      --text: #e0e0e0;
+      --muted: #a0a0a0;
+      --border: #404040;
+      --bg: #121212;
+      --card-bg: #1e1e1e;
+      --shadow: 0 4px 16px rgba(0,0,0,0.3);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       color: var(--text);
-      background: #fafafa;
+      background: var(--bg);
       line-height: 1.6;
+      transition: background 0.3s ease, color 0.3s ease;
     }
 
     a { color: var(--primary); text-decoration: none; }
@@ -27,20 +42,39 @@
     .page {
       max-width: 960px;
       margin: 24px auto;
-      background: #fff;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      background: var(--card-bg);
+      box-shadow: var(--shadow);
       border-radius: 8px;
       overflow: hidden;
+    }
+
+    .theme-toggle {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 12px;
+      cursor: pointer;
+      color: var(--text);
+      transition: all 0.3s ease;
+    }
+
+    .theme-toggle:hover {
+      background: var(--accent);
+      border-color: var(--primary);
     }
 
     header {
       padding: 24px 32px;
       border-bottom: 1px solid var(--border);
       display: flex;
-      flex-wrap: wrap;
       justify-content: space-between;
+      align-items: flex-start;
       gap: 16px;
-      background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 40%, #f3f3f3 100%);
+      background: linear-gradient(135deg, var(--card-bg) 0%, var(--accent) 40%, var(--bg) 100%);
+      position: relative;
     }
 
     header h1 {
@@ -151,6 +185,24 @@
       margin-left: 6px;
     }
 
+    .recent-work {
+      background: var(--accent);
+      border-radius: 6px;
+      padding: 16px;
+      margin-top: 12px;
+    }
+
+    .recent-work h4 {
+      color: var(--primary);
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+
+    .recent-work ul {
+      padding-left: 16px;
+      font-size: 0.88rem;
+    }
+
     @media (max-width: 768px) {
       header {
         flex-direction: column;
@@ -165,11 +217,18 @@
       .page {
         margin: 12px;
       }
+      .theme-toggle {
+        position: static;
+        align-self: flex-end;
+        margin-top: 12px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="page">
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+
     <header>
       <div>
         <h1>Madan Kumar Elumalai</h1>
@@ -207,6 +266,14 @@
               <li>Develop high-quality, scalable Java/Spring features and automate regression tests using Selenium to improve release stability.</li>
               <li>Built a GenAI chatbot POC with RAG and MCP tools leveraging OCI ADK to enhance developer and customer productivity.</li>
             </ul>
+            <div class="recent-work">
+              <h4>🔥 Recent GenAI Project</h4>
+              <ul>
+                <li>Developed enterprise AI agent using <strong>WayflowCore</strong> for orchestration and <strong>Helidon MCP</strong> for tool exposure.</li>
+                <li>Enabled A2A communication, RAG augmentation, and secure tool calls for hospitality fiscal services on OCI.</li>
+                <li>Streamlined compliance workflows, reducing manual review time and improving audit readiness.</li>
+              </ul>
+            </div>
           </div>
 
           <div class="item">
@@ -288,9 +355,10 @@
           <div class="subheading">GenAI & Agents</div>
           <div class="pill-list">
             <span class="pill">OCI ADK</span>
+            <span class="pill">WayflowCore</span>
+            <span class="pill">Helidon MCP</span>
             <span class="pill">RAG</span>
-            <span class="pill">MCP Tools</span>
-            <span class="pill">Chatbot Development</span>
+            <span class="pill">A2A Protocol</span>
           </div>
         </section>
 
@@ -319,5 +387,21 @@
       </div>
     </main>
   </div>
+
+  <script>
+    const toggleTheme = () => {
+      const html = document.documentElement;
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      document.querySelector('.theme-toggle').textContent = newTheme === 'dark' ? '☀️' : '🌙';
+    };
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    document.querySelector('.theme-toggle').textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+  </script>
 </body>
 </html>
