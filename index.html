@@ -184,7 +184,35 @@
       font-size: 0.78rem;
       margin-left: 6px;
     }
+.contact i {
+  width: 18px; /* Keeps icons aligned vertically */
+  margin-right: 8px;
+  color: var(--primary);
+  text-align: center;
+}
 
+.social-links {
+  margin-top: 8px;
+  display: flex;
+  justify-content: flex-end; /* Aligns to right to match your layout */
+  gap: 15px;
+}
+
+.social-links i {
+  font-size: 1.4rem; /* Makes social icons slightly larger */
+  margin-right: 0;
+  transition: transform 0.2s ease;
+}
+
+.social-links i:hover {
+  transform: translateY(-3px); /* Subtle lift effect */
+}
+
+@media (max-width: 768px) {
+  .social-links {
+    justify-content: flex-start; /* Aligns to left on mobile */
+  }
+}
     .recent-work {
       background: var(--accent);
       border-radius: 6px;
@@ -237,13 +265,19 @@
           Building enterprise-grade applications and AI-powered solutions across hospitality and B2B platforms, with a focus on fiscal compliance, scalability, and developer productivity.
         </p>
       </div>
-      <div class="contact">
-        <div><a href="tel:+919042532578">+91 90425 32578</a></div>
-        <div><a href="mailto:madan.mahaemmr@gmail.com">madan.mahaemmr@gmail.com</a></div>
-        <div><a href="https://github.com/MadanKumar" target="_blank">github.com/MadanKumar</a></div>
-        <div><a href="https://www.linkedin.com/in/Madan021" target="_blank">linkedin.com/in/Madan021</a></div>
-        <div>Chennai, Tamil Nadu, India</div>
-      </div>
+     <div class="contact">
+        <div><i class="fas fa-phone"></i> <a href="tel:+919042532578">+91 90425 32578</a></div>
+        <div><i class="fas fa-envelope"></i> <a href="mailto:madan.mahaemmr@gmail.com">madan.mahaemmr@gmail.com</a></div>
+        <div class="social-links">
+          <a href="https://github.com/Madan021" target="_blank" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/madan-kumar-021/" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+          </a>
+    </div>
+  <div><i class="fas fa-map-marker-alt"></i> Chennai, India</div>
+</div>
     </header>
 
     <main>
